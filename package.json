@@ -1,0 +1,22 @@
+{
+  "name": "new-way",
+  "version": "1.0.0",
+  "description": "the-new-way",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhn-Coding/new-way.git"
+  },
+  "author": "Hamza Dahhani <hamza.dahhani1998@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dhn-Coding/new-way/issues"
+  },
+  "homepage": "https://github.com/Dhn-Coding/new-way#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
