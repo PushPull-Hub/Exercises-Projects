@@ -77,12 +77,28 @@
 // }
 // console.log(clone.age);
 
-let user = {
-  name: `Hamza`,
-  age: `22`,
-  city: `Turin`,
-  "likes birds": true,
-  isAdmin: true,
-  calss: `george`,
-  money: undefined
+// let user = {
+//   name: `Hamza`,
+//   age: `22`,
+//   city: `Turin`,
+//   "likes birds": true,
+//   isAdmin: true,
+//   calss: `george`,
+//   money: undefined
+// };
+
+let salaries = {
+  John: 100,
+  Mary: 150,
+  alinson: 200
 };
+
+function SumSalaries(object) {
+  sum = 0;
+  for (let key in salaries) {
+    salaries = object[key];
+    sum = sum + salaries;
+  }
+}
+
+console.log(SumSalaries(salaries));
