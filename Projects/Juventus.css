@@ -18,7 +18,6 @@ body {
   font: 12px Arial;
   font-size: 13px;
   color: white;
-  background-color: black;
   background-repeat: repeat-x;
 }
 #Container {
@@ -52,4 +51,10 @@ body {
   top: 180px;
   font-size: 40px;
 }
-/* pppp */
+#Menu {
+  color: #000;
+}
+
+#Menu li #nav-item {
+  color: white;
+}
