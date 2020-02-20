@@ -1,38 +1,38 @@
 let Confirmation1 = confirm(
-  "Hee , I'm Lucie ... a simple system can creat a simple kind of discussion with the user , Press ok to confirm "
-)
+  "Hee , I'm Lucie ... a simple system can creat a simple kind of discussion with the user , Press ok to confirm ",
+);
 let answer = prompt(
-  'Heeeee ,Thanks for enjoying me :D , can you tell me ur name user !! '
-)
+  'Heeeee ,Thanks for enjoying me :D , can you tell me ur name user !! ',
+);
 
 if (answer === 'Lucie') {
   alert(
-    `oooooh Lucie Like me :> , nice to meet you Lucie , you know ?? inside my sysytem my developer put a rule make me discuss only with Adults `
-  )
+    `oooooh Lucie Like me :> , nice to meet you Lucie , you know ?? inside my sysytem my developer put a rule make me discuss only with Adults `,
+  );
 } else if (answer !== `Lucie`) {
   alert(
-    `Heeeeey ${answer} , Nice to meet you , inside my sysytem my developer put a rule make me discuss only with Adults   `
-  )
+    `Heeeeey ${answer} , Nice to meet you , inside my sysytem my developer put a rule make me discuss only with Adults   `,
+  );
 }
 
-let Confirmation2 = confirm(' So Are you an Adult then ??')
+let Confirmation2 = confirm(' So Are you an Adult then ??');
 
-let age = prompt('Nice , How old are you ??')
+let age = prompt('Nice , How old are you ??');
 
 while (age < 18) {
   alert(
-    `ooooh  ${age}  is not an adult  you're still young , unfortunately i don't have a tool for kids yet ;(`
-  )
-  fakeAge = prompt(`Tell your age ..... `)
+    `ooooh  ${age}  is not an adult  you're still young , unfortunately i don't have a tool for kids yet ;(`,
+  );
+  fakeAge = prompt(`Tell your age ..... `);
 
   if (fakeAge !== age) {
     alert(
-      `Hahahahaha , my developer programmed me to deal with that , you already said you're ${age} years old... `
-    )
-  } else alert('oooooh you are so honet')
+      `Hahahahaha , my developer programmed me to deal with that , you already said you're ${age} years old... `,
+    );
+  } else alert('oooooh you are so honet');
 
   if (fakeAge > 17) {
-    age = fakeAge
+    age = fakeAge;
   }
 }
 
