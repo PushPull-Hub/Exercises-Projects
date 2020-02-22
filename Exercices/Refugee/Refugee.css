@@ -1,0 +1,23 @@
+#Header {
+  display: flex;
+}
+
+.Column {
+  color: blue;
+  width: 600px;
+  height: 200px;
+}
+
+#Image {
+  background-image: url(Refugee.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 600px;
+  border: 1px;
+}
+
+.textul {
+}
+
+/* Helllllllllllllll */
