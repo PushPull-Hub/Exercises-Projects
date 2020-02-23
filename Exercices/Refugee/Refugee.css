@@ -2,14 +2,14 @@
   display: flex;
 }
 
-.Column {
+.first-div {
   color: blue;
   width: 600px;
   height: 200px;
 }
 
-#Image {
-  background-image: url(Refugee.jpg);
+#image {
+  background-image: url(Refugee1.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
@@ -17,7 +17,8 @@
   border: 1px;
 }
 
-.textul {
+.text-inside-image {
+  position: relative;
+  top: 150px;
+  left: 700px;
 }
-
-/* Helllllllllllllll */
