@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refactor</title>
+    <link rel="stylesheet" href="exam1.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- TIME NEVER ENOUGH FOR HAMZA  -->
+
+    <div>
+      <div id="background-image"></div>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button type="button" onclick="main()">Submit</button>
+        </div>
+        <input
+          id="input1"
+          type="text"
+          aria-label="First name"
+          class="form-control"
+        />
+        <input
+          id="input2"
+          type="text"
+          aria-label="Last name"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <p id="the-bmi">
+      here you'll find your <strong>Body Mass Index</strong> after Clicking th
+      Submit button
+    </p>
+  </body>
+  <script>
+    function BodyMassIndex(height, weight) {
+      let bmi = 0;
+      if (typeof height == 'number' && typeof weight == 'number') {
+        bmi = (height / weight) * 2;
+        return bmi;
+      }
+    }
+
+    function showMessage(bmi) {
+      if (bmi < 18.4) {
+        message = `ok  ${bmi} is underweight `;
+      } else if (bmi > 18.5 && BMI < 24.9) {
+        message = `ok ${bmi} is Normal`;
+      } else if (bmi > 25) {
+        message = `ok  ${bmi} is overweight`;
+      }
+      document.getElementById('the-bmi').innerHTML = `${bmi} is your body mass`;
+    }
+
+    const main = () => {
+      let height = document.getElementById('input1').value;
+      let weight = document.getElementById('input2').value;
+      height = Number(height);
+      weight = Number(weight);
+
+      let bmi = BodyMassIndex(height, weight);
+      showMessage(bmi);
+    };
+  </script>
+</html>
