@@ -1,0 +1,31 @@
+/* #turin {
+  border: 3px solid yellow;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  width: 200px;
+  padding-left: 20%;
+  padding-top: 1px;
+} */
+#first-table {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#second-table {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid blue;
+}
+
+#second-table caption {
+  width: 200px;
+  height: 20px;
+  color: blue;
+}
+#turin {
+  border: 1px solid yellow;
+  width: 150px;
+  height: 20px;
+}
