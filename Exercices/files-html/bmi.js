@@ -44,4 +44,6 @@ const mainFunction = () => {
   ).innerHTML = `<img src="bmi-adult.png" alt="" />`;
 };
 
-function statusBmi() {}
+const clearInputs = () => {
+  document.querySelectorAll('.input').forEach(input => (input.value = ``));
+};

@@ -10,6 +10,13 @@
 
   <body>
     <fieldset>
+      <button id="calcul-button" type="submit" onclick="mainFunction()">
+        Calculate
+      </button>
+      <button id="clear-button" type="submit" onclick="clearInputs()">
+        Clear
+      </button>
+
       <center>
         <table id="table">
           <caption>
@@ -17,34 +24,23 @@
           </caption>
           <tr>
             <th>Height</th>
-            <td><input id="first-input" type="text" /></td>
+            <td><input id="first-input" class="input" type="text" /></td>
           </tr>
           <tr>
             <th>Weight</th>
             <td>
-              <input id="second-input" type="text" />
+              <input id="second-input" class="input" type="text" />
             </td>
           </tr>
           <br />
-          <button
-            type="submit"
-            onclick="mainFunction()"
-            style="position: absolute;
-          margin-top: 85px;
-          margin-left: 113px;
-          height: 20px;
-          border: 2px solid green ;
-          "
-          >
-            Submit
-          </button>
         </table>
       </center>
-
-      <div id="output"></div>
-      <br />
-      <div id="arrow"></div>
-      <div id="bmi-status"></div>
     </fieldset>
+    <br />
+
+    <div id="output"><b></b></div>
+    <br />
+    <div id="arrow"></div>
+    <div id="bmi-status"></div>
   </body>
 </html>
