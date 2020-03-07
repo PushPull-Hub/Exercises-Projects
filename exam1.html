@@ -11,6 +11,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <script src="exam1.js"></script>
   </head>
 
   <body>
@@ -21,7 +22,7 @@
 
       <div class="input-group">
         <div class="input-group-prepend">
-          <button type="button" onclick="main()">Submit</button>
+          <button type="submit" onclick="main()">Submit</button>
         </div>
         <input
           id="input1"
@@ -42,34 +43,4 @@
       Submit button
     </p>
   </body>
-  <script>
-    function BodyMassIndex(height, weight) {
-      let bmi = 0;
-      if (typeof height == 'number' && typeof weight == 'number') {
-        bmi = (height / weight) * 2;
-        return bmi;
-      }
-    }
-
-    function showMessage(bmi) {
-      if (bmi < 18.4) {
-        message = `ok  ${bmi} is underweight `;
-      } else if (bmi > 18.5 && BMI < 24.9) {
-        message = `ok ${bmi} is Normal`;
-      } else if (bmi > 25) {
-        message = `ok  ${bmi} is overweight`;
-      }
-      document.getElementById('the-bmi').innerHTML = `${bmi} is your body mass`;
-    }
-
-    const main = () => {
-      let height = document.getElementById('input1').value;
-      let weight = document.getElementById('input2').value;
-      height = Number(height);
-      weight = Number(weight);
-
-      let bmi = BodyMassIndex(height, weight);
-      showMessage(bmi);
-    };
-  </script>
 </html>
