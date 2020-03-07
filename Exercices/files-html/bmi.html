@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Randoom</title>
+    <link rel="stylesheet" href="bmi.css" />
+    <script src="bmi.js"></script>
+  </head>
+
+  <body>
+    <fieldset>
+      <center>
+        <table id="table">
+          <caption>
+            <strong style="color: blue;"> Body Mass Index</strong>
+          </caption>
+          <tr>
+            <th>Height</th>
+            <td><input id="first-input" type="text" /></td>
+          </tr>
+          <tr>
+            <th>Weight</th>
+            <td>
+              <input id="second-input" type="text" />
+            </td>
+          </tr>
+          <br />
+          <button
+            type="submit"
+            onclick="mainFunction()"
+            style="position: absolute;
+          margin-top: 85px;
+          margin-left: 113px;
+          height: 20px;
+          border: 2px solid green ;
+          "
+          >
+            Submit
+          </button>
+        </table>
+      </center>
+
+      <div id="output"></div>
+      <br />
+      <div id="arrow"></div>
+      <div id="bmi-status"></div>
+    </fieldset>
+  </body>
+</html>
