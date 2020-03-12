@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main-div {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+}
+.left-column {
+  height: 100%;
+  background-color: black;
+  flex-basis: 30%;
+}
+.right-column {
+  height: 100%;
+  background: green;
+  flex-basis: 70%;
+}
+button {
+  margin: 0;
+  position: absolute;
+  right: 0px;
+  margin-top: 0px;
+  top: 300px;
+  left: 200px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+input {
+  padding: 0;
+  margin: 0;
+  top: 300px;
+  position: absolute;
+  left: 67px;
+  padding-bottom: 7px;
+}
+p {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 280px;
+  left: 561px;
+  font-size: 64px;
+}
