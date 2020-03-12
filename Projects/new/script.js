@@ -1,5 +1,3 @@
-// HI
-
 function showName() {
   let name = document.getElementById('input').value;
   return (document.getElementById(
