@@ -1,10 +1,10 @@
 const input = document.querySelector('.password-input');
 const error = document.querySelector('.error-message');
-const timeout = 0;
+let timeout = 0;
 
 const showError = message => {
   error.style.color = '#C91E1E';
-  error.style.display = 'block';
+  //   error.style.display = 'block';
   error.innerHTML = message;
 };
 
@@ -12,6 +12,7 @@ const showPass = message => {
   error.style.color = '#119822';
   error.innerHTML = message;
 };
+const emptyInput = () => (document.getElementById('message').innerHTML = ``);
 
 const passwordValidation = password => {
   const lowerCase = new RegExp('^(?=.*[a-z])');
@@ -29,13 +30,15 @@ const passwordValidation = password => {
     showError(' Your password must include at least one special character');
   } else if (!numeric.test(password)) {
     showError(' Your password must include at least one number ');
+  } else if (password == null || password === '') {
+    emptyInput();
   } else {
     showPass('Strong Password');
   }
 };
 
-document.querySelector('.password-input').addEventListener('keyup', e => {
-  password = e.target.value;
+input.addEventListener('keyup', Mozzarella => {
+  const password = Mozzarella.target.value;
   clearTimeout(timeout);
   timeout = setTimeout(() => passwordValidation(password), 400);
 });
