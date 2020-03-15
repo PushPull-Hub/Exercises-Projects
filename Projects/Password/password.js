@@ -6,7 +6,6 @@ const showError = message => {
   error.style.color = '#C91E1E';
   error.innerHTML = message;
 };
-
 const showPass = message => {
   error.style.color = '#119822';
   error.innerHTML = message;
@@ -19,10 +18,10 @@ const passwordValidation = password => {
   const specialCaracters = new RegExp('^(?=.*[!@$%^&*])');
   const numeric = new RegExp('^(?=.*[0-9])');
 
-  if (password.length < 6 && password.length !== 0) {
-    showError('Your password must be at least 6 characters long');
-  } else if (password == null || password.length === 0) {
+  if (password == null || password.length === 0) {
     emptyInput();
+  } else if (password.length < 6) {
+    showError('Your password must be at least 6 characters long');
   } else if (!lowerCase.test(password)) {
     showError('Your password must include at least one lowercase character ');
   } else if (!upperCase.test(password)) {
