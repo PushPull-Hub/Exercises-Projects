@@ -35,13 +35,13 @@ const passwordValidation = password => {
   }
 };
 
-input.addEventListener('keyup', Mozzarella => {
-  const password = Mozzarella.target.value;
+input.addEventListener('keyup', event => {
+  const password = event.target.value;
   clearTimeout(timeout);
   timeout = setTimeout(() => passwordValidation(password), 400);
 });
 
-//  User Name
+//  User
 
 const showMessage = message =>
   (document.querySelector('#wrong-user').innerHTML = message);
