@@ -40,3 +40,30 @@ input.addEventListener('keyup', Mozzarella => {
   clearTimeout(timeout);
   timeout = setTimeout(() => passwordValidation(password), 400);
 });
+
+//  User Name
+
+const showMessage = message =>
+  (document.querySelector('#wrong-user').innerHTML = message);
+const accessToPage = () =>
+  (location.href =
+    'http://127.0.0.1:5500/Projects/Powercoders/powercoders.html');
+
+const checkInputs = () => {
+  const user = `Poco`;
+  const password = `Powercoders`;
+  const guest = document.getElementById('name-input').value;
+  const guestPassword = document.getElementById('password-input').value;
+  if (
+    (guest == null || guest == false) &&
+    (guestPassword == null || guestPassword == false)
+  ) {
+    showMessage('Make sure you insserted a name and a password');
+  } else if (guest != user) {
+    showMessage("Sorry you're not the right user");
+  } else if (guestPassword !== password) {
+    showMessage('Sorry Password is Wrong');
+  } else if (guestPassword == password && guest == user) {
+    accessToPage();
+  }
+};
