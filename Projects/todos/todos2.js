@@ -37,9 +37,9 @@ inputElement.addEventListener('keyup', function(event) {
         done: false,
         trash: false,
       });
+      id++;
     }
     inputElement.value = '';
-    id++;
   }
 });
 
@@ -67,4 +67,6 @@ listElement.addEventListener('click', function(event) {
   }
 });
 
-localStorage.setItem('todo', JSON.stringify(list));
+clearElement.addEventListener('click', function clearList() {
+  location.reload();
+});
