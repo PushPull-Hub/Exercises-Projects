@@ -7,14 +7,17 @@ const UNCHECK = 'fa-circle-thin'; // White Circle
 const LINE = 'line-through';
 let list = [];
 let id = 0;
+const option = { weekday: 'long', month: 'short', year: 'numeric' };
+const today = new Date();
+dateElement.innerHTML = today.toLocaleDateString('en-uk', option);
 
 function addTodo(todo, id, done, trash) {
   const DONE = done ? CHECK : UNCHECK;
   const LINE = done ? LINE_THROUGH : '';
-  const text = `<li>
-  <i id="${id}" class="fa ${DONE}" job= "complete" ></i>
-  <p class="${LINE}" >${todo}</p>
-  <i id="${id}" class="fa fa-trash-o delete" job="remove"></i>
+  const text = `<li class="item">
+  <i id="${id}" class="fa ${DONE} co" job= "complete"  ></i>
+  <p class="text" class="${LINE}" >${todo}</p>
+  <i id="${id}" class="fa fa-trash-o delete de" job="remove" ></i>
   </li>`;
   const position = 'beforeend';
   if (trash) {
