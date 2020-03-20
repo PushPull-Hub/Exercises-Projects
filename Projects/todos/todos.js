@@ -3,8 +3,6 @@ const dateElement = document.getElementById('date');
 const list = document.getElementById('list');
 const input = document.getElementById('input');
 
-// .insertAdjacentElement to add the todo to the list
-
 const CHECK = 'fa-check-circle'; // Green
 const UNCHECK = 'fa-circle-thin'; // White
 const LINE_TROUGH = 'lineTrought';
@@ -15,17 +13,11 @@ function addTodo(todo, id, done, trash) {
   }
   const DONE = done ? CHECK : UNCHECK;
   const LINE = done ? LINE_TROUGH : '';
-  let parser = new DOMParser();
-  const text = parser.parseFromString(
-    `<li class="item"><i class="fa ${DONE} " job="complete" id ="${id}"></i><p class=  ${LINE} > ${todo} </p><i class="fa fa-trash-o delete" job="delete" id="${id}"></i></li>`,
-    'text/html',
-  );
+  const text = `<li class="item"><i class="fa ${DONE} " job="complete" id ="${id}"></i><p class= ${LINE} > ${todo} </p><i class="fa fa-trash-o delete" job="delete" id="${id}"></i></li>`;
   const position = 'beforeend';
-  list.insertAdjacentElement(position, text);
+  list.insertAdjacentHTML(position, text);
 }
 
-// when User press Enter Key _(key code 13)
-// get the input value return it to todo
 let List = [];
 let id = 0;
 input.addEventListener('keyup', function(event) {
@@ -48,7 +40,7 @@ input.addEventListener('keyup', function(event) {
 function completeTodo(element) {
   element.classList.toggle(CHECK);
   element.classList.toggle(UNCHECK);
-  element.parentNode.querySelector('.text').classList.toggle(LINE_TROUGH);
+  element.parentNode.classList.toggle(LINE_TROUGH);
   List[element.id].done = List[element.id].done ? false : true;
 }
 
@@ -68,5 +60,5 @@ list.addEventListener('click', function(event) {
     removeTodo(element);
   }
 });
-// Store on Browser
+// Strore on Browser
 localStorage.setItem('todo', JSON.stringify(List));
