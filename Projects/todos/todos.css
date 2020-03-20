@@ -1,14 +1,3 @@
-/* * {
-  margin: 0;
-  padding: 0;
-}
-
-.header {
-  background: url(../../images/background3.jpg);
-  background-repeat: no-repeat;
-  /* background-size: 200px; */
-
-/* ------------ youtube.com/CodeExplained ------------ */
 body {
   padding: 0;
   margin: 0;
@@ -58,7 +47,7 @@ body {
   font-family: 'Titillium Web', sans-serif;
 }
 
-/* ------------ content ------------ */
+/* ------------ content ------------  */
 .content {
   width: 380px;
   height: 350px;
@@ -106,7 +95,7 @@ body {
   background-color: #fff;
   max-width: 285px;
 }
-.lineThrough {
+.line-through {
   text-decoration: line-through;
   color: #ccc;
 }
@@ -121,6 +110,7 @@ body {
   cursor: pointer;
 }
 /* ------------ add item ------------ */
+
 .add-to-do {
   position: relative;
   width: 360px;
@@ -146,25 +136,6 @@ body {
   padding-left: 10px;
 }
 .add-to-do input::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: #4162f6;
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 20px;
-}
-.add-to-do input::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #4162f6;
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 20px;
-}
-.add-to-do input:-ms-input-placeholder {
-  /* IE 10+ */
-  color: #4162f6;
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 20px;
-}
-.add-to-do input:-moz-placeholder {
-  /* Firefox 18- */
   color: #4162f6;
   font-family: 'Titillium Web', sans-serif;
   font-size: 20px;
