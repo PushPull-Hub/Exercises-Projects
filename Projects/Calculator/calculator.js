@@ -1,47 +1,65 @@
-//
-//
+const calculator = document.querySelector('.calculator');
+const keys = document.querySelector('.calculator--keys');
+const display = document.querySelector('.calculator--display');
 
-// function collectData(inputnumber) {
-//   let num = ``;
-//   for (i = 0; i < 1; i++) {
-//     num = ` ${num}` + `${inputnumber}`;
-//   }
-//   return num;
-// }
-// console.log(collectData(11));
+keys.addEventListener('click', e => {
+  if (e.target.matches('button')) {
+    const key = e.target;
+    const action = key.dataset.action;
+    const keyContent = key.textContent;
+    const displayedNum = display.textContent;
+    const previousKeyType = calculator.dataset.previousKeyType;
 
-function insertNum(num) {
-  document.getElementById('input').value =
-    document.getElementById('input').value + `${num}`;
-}
+    if (!action) {
+      if (displayedNum === '0' || previousKeyType === 'operator') {
+        display.textContent = keyContent;
+      } else {
+        display.textContent = displayedNum + keyContent;
+      }
+    }
 
-function storeValue1() {
-  return parseInt(document.getElementById('input').value);
-}
-function clearInput() {
-  return (document.getElementById('input').value = ``);
-}
+    if (
+      action === 'add' ||
+      action === 'subtract' ||
+      action === 'multiply' ||
+      action === 'devide'
+    ) {
+      key.classList.add('is-depressed');
+      calculator.dataset.previousKeyType = 'operator';
+      calculator.dataset.firstValue = displayedNum;
+      calculator.dataset.operator = action;
+    }
 
-function sum(a, b) {
-  let st = parseInt(a);
-  let nd = parseInt(b);
-  return st + nd;
-}
+    if (action === 'decimal') {
+      display.textContent = displayedNum + '.';
+    }
 
-// function sumValues() {
-//   let val2 = document.getElementById('input').value;
-//   let sump = sum(storeValue1(), val2);
-//   return (document.getElementById(
-//     'p',
-//   ).innerHTML = `The Result is <span class="item animated fadeInDown"> ${sump} </span>`);
-// }
+    if (action === 'clear') {
+      console.log('clear key');
+    }
 
-function sumValues() {
-  let val = parseint(document.getElementById('input').value);
-  let sdVal = parseint(document.getElementById('input').value);
+    if (action === 'claculate') {
+      const firstValue = calculator.dataset.firstValue;
+      const operator = calculator.dataset.operator;
+      const secondValue = displayedNum;
+      display.textContent = calculate(firstValue, operator, secondValue);
+    }
+  }
+});
 
-  let sum = sum(val + sdVal);
-  return (document.getElementById(
-    'p',
-  ).innerHTML = `The Result is <span class="item animated fadeInDown"> ${sump} </span>`);
-}
+const calculate = (firstValue, operator, secondValue) => {
+  let result = '';
+  if (operator === 'add') {
+    result = parseFloat(firstValue) + parseFloat(secondValue);
+  }
+  if (operator === 'subtract') {
+    result = parseFloat(firstValue) - parseFloat(secondValue);
+  }
+  if (operator === 'multiply') {
+    result = parseFloat(firstValue) * parseFloat(secondValue);
+  }
+  if (operator === 'devide') {
+    result = parseFloat(firstValue) / parseFloat(secondValue);
+  }
+  return result;
+};
