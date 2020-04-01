@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 import Todos from './components/Todos';
+import Input from './components/Input';
+// import { text } from 'express';
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: 1,
-        title: 'take out the trash',
-        completed: false,
-      },
-      {
-        id: 2,
-        title: 'have a Dinner',
-        completed: false,
-      },
-      {
-        id: 3,
-        title: 'Learn JavaScript',
-        completed: false,
-      },
-    ],
+    todos: [],
   };
+
+  addTodo = (text, id) => {
+    const newTodo = {
+      id: id,
+      todo: text,
+      completed: false,
+    };
+    this.setState({ todos: [...this.state.todos, newTodo] });
+  };
+
   completeTodo = id => {
     this.setState({
       todos: this.state.todos.map(todo => {
@@ -47,6 +43,7 @@ class App extends Component {
           completeTodo={this.completeTodo}
           deleteTodo={this.deleteTodo}
         />
+        <Input addTodo={this.addTodo} />
       </div>
     );
   }

@@ -12,3 +12,14 @@ a {
   color: #333;
   text-decoration: none;
 }
+
+button i.de {
+  position: absolute;
+  font-size: 25px;
+  right: 15px;
+  top: 10px;
+}
+button i.de:hover {
+  color: #af0000;
+  cursor: pointer;
+}

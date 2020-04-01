@@ -11,7 +11,7 @@ export class TodoItem extends Component {
   };
 
   render() {
-    const { id, title } = this.props.todo;
+    const { id, todo } = this.props.todo;
     return (
       <div style={this.getStyle()}>
         <p>
@@ -20,28 +20,16 @@ export class TodoItem extends Component {
             type="checkbox"
             onChange={this.props.completeTodo.bind(this, id)}
           />{' '}
-          {title}
-          <button
-            style={btnStyle}
+          {todo}
+          <i
+            className="fa fa-trash-o delete de"
             onClick={this.props.deleteTodo.bind(this, id)}
-          >
-            x
-          </button>
+          ></i>
         </p>
       </div>
     );
   }
 }
-
-const btnStyle = {
-  background: '#ff0000',
-  color: '#fff',
-  border: 'none',
-  padding: '5px 8px',
-  borderRadious: '50%',
-  cursor: 'pointer',
-  float: 'right',
-};
 
 TodoItem.propTypes = {
   todo: propTypes.object.isRequired,
