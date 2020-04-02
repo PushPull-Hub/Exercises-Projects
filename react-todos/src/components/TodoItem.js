@@ -18,12 +18,12 @@ export class TodoItem extends Component {
     const { id, todo } = this.props.todo;
 
     return (
-      <div className="todo-item" style={this.doneTodoStyle()}>
+      <div className="todo-item">
         <i
           className={this.checkButton()}
           onClick={this.props.completeTodo.bind(this, id)}
         ></i>{' '}
-        {todo}
+        <span style={this.doneTodoStyle()}> {todo}</span>
         <i
           className="fa fa-trash-o delete de"
           onClick={this.props.deleteTodo.bind(this, id)}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Todos from './components/Todos';
 import Input from './components/Input';
-// import { text } from 'express';
+import Header from './components/Header';
 
 class App extends Component {
   state = {
@@ -16,7 +16,9 @@ class App extends Component {
       completed: false,
       done: false,
     };
-    this.setState({ todos: [...this.state.todos, newTodo] });
+    if (text) {
+      this.setState({ todos: [...this.state.todos, newTodo] });
+    }
   };
 
   completeTodo = id => {
@@ -40,6 +42,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <Todos
           todos={this.state.todos}
           completeTodo={this.completeTodo}
