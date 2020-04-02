@@ -14,6 +14,7 @@ class App extends Component {
       id: id,
       todo: text,
       completed: false,
+      done: false,
     };
     this.setState({ todos: [...this.state.todos, newTodo] });
   };
@@ -22,6 +23,7 @@ class App extends Component {
     this.setState({
       todos: this.state.todos.map(todo => {
         if (todo.id === id) {
+          todo.done = !todo.done;
           todo.completed = !todo.completed;
         }
         return todo;
@@ -42,6 +44,7 @@ class App extends Component {
           todos={this.state.todos}
           completeTodo={this.completeTodo}
           deleteTodo={this.deleteTodo}
+          completeTodo={this.completeTodo}
         />
         <Input addTodo={this.addTodo} />
       </div>

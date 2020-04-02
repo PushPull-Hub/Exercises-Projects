@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 export class TodoItem extends Component {
-  getStyle = () => {
+  doneTodoStyle = () => {
     return {
-      background: '#f4f4f4',
-      padding: '10px',
-      borderBottom: '1px #ccc dotted',
       textDecoration: this.props.todo.completed ? 'line-through' : 'none',
     };
+  };
+  checkButton = () => {
+    const CHECK = 'fa-check-circle'; // Green Circle
+    const UNCHECK = 'fa-circle-thin'; // White Circle
+    const DONE = this.props.todo.done ? CHECK : UNCHECK;
+    const CLASS = `fa ${DONE}`;
+    return CLASS;
   };
 
   render() {
     const { id, todo } = this.props.todo;
+
     return (
-      <div style={this.getStyle()}>
-        <p>
-          <input
-            style={{ marginRight: '10px' }}
-            type="checkbox"
-            onChange={this.props.completeTodo.bind(this, id)}
-          />{' '}
-          {todo}
-          <i
-            className="fa fa-trash-o delete de"
-            onClick={this.props.deleteTodo.bind(this, id)}
-          ></i>
-        </p>
+      <div className="todo-item" style={this.doneTodoStyle()}>
+        <i
+          className={this.checkButton()}
+          onClick={this.props.completeTodo.bind(this, id)}
+        ></i>{' '}
+        {todo}
+        <i
+          className="fa fa-trash-o delete de"
+          onClick={this.props.deleteTodo.bind(this, id)}
+        ></i>
       </div>
     );
   }
