@@ -56,3 +56,39 @@
 
 // console.log(printNumber(5))
 // let x = 0
+
+let sum = (a, b) => a + b;
+// console.log(sum(2, 3));
+
+let multiplication = (a, b) => a * b;
+
+// console.log(multiplication(5, 6));
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let isEven = number => number % 2 === 0;
+
+// console.log(isEven(2));
+
+let isOdd = number => number % 2 !== 0;
+
+// console.log(isOdd(3));
+
+let print = input => console.log(input);
+let alert = input => alert(input);
+
+// print(isEven(2));
+
+let numbersFilter = input =>
+  typeof input === 'number'
+    ? (message = input)
+    : (message = "input isn't a number");
+
+// print(numbersFilter('number'));
+
+let testUserName = name =>
+  name === 'Robert' || name === 'Admin'
+    ? (message = "Yeah You're The User")
+    : (message = "Sorry You're Not The User");
+
+// print(testUserName('Robert'));

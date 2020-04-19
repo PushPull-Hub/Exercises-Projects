@@ -24,7 +24,7 @@ keys.addEventListener('click', e => {
       action === 'multiply' ||
       action === 'devide'
     ) {
-      key.classList.add('is-depressed');
+      //   key.classList.add('is-depressed');
       calculator.dataset.previousKeyType = 'operator';
       calculator.dataset.firstValue = displayedNum;
       calculator.dataset.operator = action;
