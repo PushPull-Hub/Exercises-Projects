@@ -1,0 +1,11 @@
+{
+  "name": "ex-node",
+  "version": "1.0.0",
+  "description": "Practice on Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PushPull-Hub",
+  "license": "ISC"
+}
