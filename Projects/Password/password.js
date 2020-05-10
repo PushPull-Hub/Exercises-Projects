@@ -2,17 +2,17 @@ const input = document.querySelector('.password-input');
 const error = document.querySelector('.error-message');
 let timeout = 0;
 
-const showError = message => {
+const showError = (message) => {
   error.style.color = '#C91E1E';
   error.innerHTML = message;
 };
-const showPass = message => {
+const showPass = (message) => {
   error.style.color = '#119822';
   error.innerHTML = message;
 };
 const emptyInput = () => (document.getElementById('message').innerHTML = ``);
 
-const passwordValidation = password => {
+const passwordValidation = (password) => {
   const lowerCase = new RegExp('^(?=.*[a-z])');
   const upperCase = new RegExp('^(?=.*[A-Z])');
   const specialCaracters = new RegExp('^(?=.*[!@$%^&*])');
@@ -35,7 +35,7 @@ const passwordValidation = password => {
   }
 };
 
-input.addEventListener('keyup', event => {
+input.addEventListener('keyup', (event) => {
   const password = event.target.value;
   clearTimeout(timeout);
   timeout = setTimeout(() => passwordValidation(password), 400);
@@ -43,7 +43,7 @@ input.addEventListener('keyup', event => {
 
 //  User
 
-const showMessage = message =>
+const showMessage = (message) =>
   (document.querySelector('#wrong-user').innerHTML = message);
 const accessToPage = () =>
   (location.href =
@@ -51,7 +51,7 @@ const accessToPage = () =>
 
 const checkInputs = () => {
   const user = `Poco`;
-  const password = `Powercoders`;
+  const password = `*1Powercoders*!`;
   const guest = document.getElementById('name-input').value;
   const guestPassword = document.getElementById('password-input').value;
   if (
